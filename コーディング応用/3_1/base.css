@@ -38,3 +38,35 @@ body {
 }
 
 /* 上の部分は気にせずここから書く */
+
+#wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+#box1 {
+	background-color: red;
+	width: 600px;
+	height: 200px;
+}
+
+#box2 {
+	background-color: blue;
+	width: 600px;
+	height: 200px;
+}
+
+@media screen and (max-width: 1000px) {
+
+	#wrapper {
+		display: block;
+	}
+
+	#box1 {
+		width: 100%;
+	}
+	
+	#box2 {
+		width: 100%;
+	}
+}
