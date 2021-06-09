@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>クリックイベント</title>
+  <link rel="stylesheet" type="text/css" href="base.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+  $(function(){
+    // ここに処理を記述
+    $('#button').on("click", function(){
+      alert('ボタンをクリックしました');
+    });
+  });
+  </script>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="button">
+      <p>button</p>
+    </div><!-- button -->
+  </div><!-- wrapper -->
+</body>
+</html>
