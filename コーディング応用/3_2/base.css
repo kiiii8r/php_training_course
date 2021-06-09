@@ -22,7 +22,7 @@ strong.more{color:#c30}
 a{text-decoration: none;}
 
 html {
-
+	width: 1280px;
 }
 
 body {
@@ -38,3 +38,231 @@ body {
 }
 
 /* 上の部分は気にせずここから書く */
+
+/* header */
+
+header {
+	height: 56px;
+	padding: 3px;
+}
+
+.top-rainbow {
+	width: 100%;
+}
+
+.nav {
+	display: flex;
+	justify-content: space-around;
+}
+
+.nav-logo {
+	display: flex;
+	align-items: center;
+}
+
+.logo-title {
+	font-weight: bold;
+	margin-left: 10px;
+	font-size: 20px;
+}
+
+.nav-link {
+	display: flex;
+	width: 300px;
+	height: 100%;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 14px;
+}
+
+/* header */
+
+/* main */
+
+main {
+	height: 1570px;
+}
+
+/* top */
+
+.top-box {
+	position: relative;
+	width: 100%;
+	height: 430px;
+}
+
+.top-rainbow {
+	height: 430px;
+	width: 1280px;
+}
+
+.top-contents {
+	position: absolute;
+    top: 30px;
+    left: 0;
+	display: flex;
+}
+
+.left-section {
+	width: 400px;
+	margin: 130px 0 0 180px;
+}
+
+.top-wrapper {
+	width: 303px;
+	color: white;
+}
+
+.donation-link {
+	margin: 30px;
+	width: 230px;
+	background-color: white;
+	text-align: center;
+	display: block;
+	padding: 8px;
+	font-size: 12px;
+	border-radius: 18px;
+}
+
+.donation-link > a {
+	color: black;
+}
+
+.girls {
+	height: 370px;
+	width: 580px;
+}
+
+/* top */
+
+/* News */
+
+.news-wrapper {
+	font-weight: bold;
+	text-align: center;
+	height: 80px;
+}
+
+.news-title {
+	font-size: 18px;
+	width: 55px;
+	margin:auto;
+	padding-top: 30px;
+	border-bottom: solid 2px red;
+}
+
+.news-section{
+	height: 410px;
+}
+
+.news-list {
+	display: flex;
+	justify-content: center;
+}
+
+.news-box {
+	height: 300px;
+	width: 300px;
+	margin: 0 15px;
+}
+
+/* News */
+
+/* Contents */
+.contents-wrapper {
+	font-weight: bold;
+	text-align: center;
+	height: 80px;
+}
+
+.contents-title {
+	font-size: 18px;
+	width: 90px;
+	margin:auto;
+	padding-top: 30px;
+	border-bottom: solid 2px red;
+}
+
+.contents-section {
+	height: 700px;
+}
+
+.content-box {
+	display: flex;
+	justify-content: center;
+	width: 960px;
+	margin: auto;
+	margin-bottom: 30px;
+	box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.253);
+}
+
+.content-photo {
+	height: 280px;
+	width: 480px;
+	border-radius: 10px;
+}
+
+.content-detail {
+	margin: auto;
+}
+
+.content-title {
+	font-weight: bold;
+	height: 45px;
+}
+
+.content-text {
+	width: 410px;
+}
+
+/* Contents */
+
+/* main */
+
+/* footer */
+
+footer {
+	height: 240px;
+	position: relative;
+}
+
+.footer-rainbow {
+	height: 240px;
+	width: 1280px;
+}
+
+.footer-content {
+	position: absolute;
+	width: 100%;
+	top: 50px;
+	left: 0;
+}
+
+.footer-text {
+	text-align: center;
+	color: white;
+}
+
+.footer-link {
+	margin: 38px auto;
+	width: 230px;
+	background-color: white;
+	text-align: center;
+	display: block;
+	padding: 8px;
+	font-size: 12px;
+	border-radius: 18px;
+}
+
+.footer-link > a {
+	color: black;
+}
+
+.copyright {
+	width: 100%;
+	text-align: center;
+	border-top: solid 1px white;
+	color: white;
+	padding-top: 8px;
+	font-size: 8px;
+}
