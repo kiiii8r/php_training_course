@@ -22,16 +22,36 @@
 // ただし、西暦年が400で割り切れる年はうるう年
 
 function isLeapYear($year) {
-    // この関数に判定処理を記述
+    if($year % 400 === 0) {
+        echo $year . '年はうるう年です。' . '<br>';
+        return;
+    } 
+    
+    if($year % 100 === 0) {
+        echo $year . '年' . '<br>';
+        return;
+    } 
+    
+    if($year % 4 === 0) {
+        echo $year . '年はうるう年です。' . '<br>';
+        return;
+    } 
+
+    echo $year . '年' . '<br>';
 }
 ?>
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="utf-8">
-<title>うるう年判定</title>
+  <meta charset="utf-8">
+  <title>うるう年判定</title>
 </head>
+
 <body>
-    <!-- ここに表示例の通り表示 -->
+  <?php for($year = 1900; $year <= 2080; $year++){ ?>
+  <?php isLeapYear($year) ?>
+  <?php } ?>
 </body>
+
 </html>
