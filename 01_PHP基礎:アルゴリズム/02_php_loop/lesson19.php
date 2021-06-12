@@ -20,15 +20,41 @@ $arr = [99, 3, 12, 45, 60, 100, 31, 7, 28];
 
 $arr = [99, 3, 12, 45, 60, 100, 31, 7, 28];
 
-// ここで並び替え処理
+for($i = 0; $i < count($arr); $i++ ){
+    for($j = $i + 1; $j < count($arr); $j++){
+        if ($arr[$i] > $arr[$j]) {
+            $num = $arr[$i];
+            $arr[$i] = $arr[$j];
+            $arr[$j] = $num;
+        } 
+    }
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="utf-8">
-<title>数字並び替えプログラム</title>
+  <meta charset="utf-8">
+  <title>数字並び替えプログラム</title>
 </head>
+
 <body>
-    <!-- ここに並び替え後を表示 -->
+  <?php $length = count($arr);  ?>
+  <?php $no = 0;  ?>
+
+  <?= "[" ?>
+  <?php foreach ($arr as $value): ?>
+  <?= "$value " ?>
+  <?php $no++; ?>
+
+  <?php if($no !== $length){ ?>
+  <?= "," ?>
+  <?php } ?>
+
+  <?php endforeach; ?>
+  <?= "]" ?>
 </body>
+
 </html>
