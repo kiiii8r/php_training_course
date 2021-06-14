@@ -39,8 +39,8 @@ function calc($yen, $product) {
 // お釣りの計算
 function quantity($amount, $money){
     $sum = 0;
-    if($amount > $money) {
-        for($i = 0 ; $amount > $money; $i++){
+    if($amount >= $money) {
+        for($i = 0 ; $amount >= $money; $i++){
             $amount -= $money;
             $sum++;
         }
