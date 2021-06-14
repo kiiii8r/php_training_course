@@ -22,7 +22,12 @@ $num2 = 5;  // 分子
 $deno2 = 6; // 分母
 
 function calcFraction($num1, $deno1, $num2, $deno2) {
-    // この関数内に処理を記述
+  
+    $deno_lem = lcm($deno1, $deno2);
+    $num = $deno_lem / $deno1 * $num1 + $deno_lem / $deno2 * $num2;
+    $gcd = gcd($num, $deno_lem);
+    
+    echo $num / $gcd ."/". $deno_lem / $gcd;
 }
 
 // 最大公約数
@@ -44,15 +49,17 @@ function lcm($m, $n){
 ?>
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="utf-8">
-<title>分数の足し算プログラム</title>
+  <meta charset="utf-8">
+  <title>分数の足し算プログラム</title>
 </head>
+
 <body>
-    <section>
-        <p><?php echo $num1 ."/". $deno1 ." + ". $num2 ."/". $deno2 ?></p>
-        <!-- ここに結果表示 -->
-        <p>答えはxxxです</p>
-    </section>
+  <section>
+    <p><?php echo $num1 ."/". $deno1 ." + ". $num2 ."/". $deno2 ?></p>
+    <p><?php calcFraction($num1, $deno1, $num2, $deno2); ?></p>
+  </section>
 </body>
+
 </html>
