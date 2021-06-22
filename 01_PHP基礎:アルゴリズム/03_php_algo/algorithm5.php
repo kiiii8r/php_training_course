@@ -62,6 +62,33 @@ $cards = [
     // ['suit'=>'diamond', 'number'=>3],
     // ['suit'=>'heart', 'number'=>2],
     
+    // 1と13ではストレートにならない
+    // ['suit'=>'heart', 'number'=>12],
+    // ['suit'=>'heart', 'number'=>13],
+    // ['suit'=>'heart', 'number'=>10],
+    // ['suit'=>'club', 'number'=>11],
+    // ['suit'=>'heart', 'number'=>1],
+    
+    // ストレート ジョーカーが連番の間
+    // ['suit'=>'heart', 'number'=>12],
+    // ['suit'=>'heart', 'number'=>13],
+    // ['suit'=>'heart', 'number'=>10],
+    // ['suit'=>'joker', 'number'=>0],
+    // ['suit'=>'heart', 'number'=>9],
+    
+    // ジョーカーが連番の間で上の連番の最小値と下の連番の最大値の差が1以上である場合はストレートにならない
+    // ['suit'=>'heart', 'number'=>11],
+    // ['suit'=>'club', 'number'=>12],
+    // ['suit'=>'heart', 'number'=>1],
+    // ['suit'=>'joker', 'number'=>0],
+    // ['suit'=>'heart', 'number'=>2],
+    
+    // ['suit'=>'heart', 'number'=>1],
+    // ['suit'=>'club', 'number'=>2],
+    // ['suit'=>'heart', 'number'=>3],
+    // ['suit'=>'joker', 'number'=>0],
+    // ['suit'=>'heart', 'number'=>12],
+    
     // ストレート joker
     // ['suit'=>'heart', 'number'=>1],
     // ['suit'=>'spade', 'number'=>5],
@@ -307,26 +334,32 @@ function role($cards, $joker){
     $stage = false;
 
     foreach($cards as $key => $value) {
+        $array[] = $value['number'];
         if($joker === 1 && $key === 0){
             continue;
         }
         $stage_array[] = $value['number'] - $key;
-        $array[] = $value['number'];
     }
     
-    if(count(array_unique($stage_array)) === 1){
-        $stage = true;
+    if($joker === 0)  {
+        if(count(array_unique($stage_array)) === 1){
+            $stage = true;
+        }
+    } else {
+        if(count(array_unique($stage_array)) < 3 && count(array_unique($array)) === 5 && $array[4] - $array[1] <= 4){
+            if(!(in_array(1, $array) && in_array(13, $array))){ 
+                $stage = true;
+            }
+        }
     }
     
-    if($joker === 1 && count(array_unique($stage_array)) === 2){
-        $stage = true;
-    }
+
 
 // 結果を返す
 
     // ロイヤルストレートフラッシュ・・・1, 10, 11, 12, 13で同じマーク
     $royal = [1, 10, 11, 12, 13];
-    if($array === $royal) {
+    if($array === $royal && in_array(5, $suit_pair) ) {
         return 'ロイヤルストレートフラッシュ';
     }
     
