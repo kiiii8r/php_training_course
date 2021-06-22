@@ -1,0 +1,655 @@
+@charset "UTF-8";
+
+/* reset */
+
+body, h1, h2, h3, h4, h5, h6, p, address,
+ul, ol, li, dl, dt, dd, img, form, table, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 100%;
+	text-align: left;
+    text-decoration: none;
+	list-style-type: none;
+	border-collapse: collapse;
+}
+
+textarea { 
+	font-size: 100%; 
+	vertical-align:middle;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+img { 
+	display: block; 
+}
+
+hr { 
+	display: none; 
+}
+
+em {
+	font-style: normal;
+}
+
+
+body {
+	font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* コロナご案内 */
+
+.colona {
+	background-color: black;
+	height: 57px;
+	text-align: center;
+	padding-top: 18px;
+  font-size: 14px; 
+}
+
+.colona a {
+	top: 3px;
+	color: #fff;
+	text-decoration: underline;
+}
+
+.colona a:hover {
+	opacity: 0.9;
+}
+
+/* グローバルヘッダー */
+
+.general_header {
+	background-color: black;
+	display: flex;
+	color: white;
+	height: 64px;
+	opacity: 0.8;
+	justify-content: space-between;
+}
+
+.general_header .header_nav {
+	display: flex;
+	align-items: center;
+	color: white;
+	height: 50px;
+	width: 90%;
+	margin-left: 30px;
+	margin: auto;
+	position: absolute;
+	top: 15px;
+	left: 5%;
+	justify-content:space-between;
+}
+
+.general_header .g_nav {
+	display: flex;
+	height: 100%;
+	width: 440px;
+}
+
+.general_header .g_nav .menu {
+	width: 105px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.general_header .g_nav a {
+	color: white;
+}
+
+.general_header .sign {
+	align-items: center;
+}
+
+.general_header .sign .signin {
+	cursor: pointer;
+}
+
+.general_header .sign .signin:hover {
+	color:lightgray;
+}
+
+/* トップヘッダー */
+
+header {
+	position: relative;
+}
+
+header .background_img {
+	height: 680px;
+	width: 100%;
+	overflow: hidden;
+}
+
+header .background_img img {
+	filter:opacity(0.8);
+	background-size: cover;
+	object-position: 0 -125px;
+	width: 100%;
+	overflow: hidden;
+}
+
+header .box_transition {
+	transition: all 0.5s ease-out 0s;
+} 
+
+header .fixed {
+	background-color: black;
+	z-index: 500;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	opacity: 0.8;
+}
+
+header .header_nav {
+	display: flex;
+	align-items: center;
+	color: white;
+	height: 50px;
+	width: 90%;
+	margin-left: 30px;
+	margin: auto;
+	position: absolute;
+	top: 15px;
+	left: 5%;
+	justify-content:space-between;
+}
+
+header .g_nav {
+	display: flex;
+	height: 100%;
+	width: 430px;
+}
+
+header .g_nav .menu {
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+header .g_nav .menu:hover {
+	color:lightgray;
+}
+
+header .g_nav a {
+	color: white;
+}
+
+header .sign .signin {
+	cursor: pointer;
+}
+
+header .sign .signin:hover {
+	color:lightgray;
+}
+
+header h1.concept {
+	width: 90%;
+	margin: auto;
+	position: absolute;
+	top: 250px;
+	left: 5%;
+	color: white;
+	font-size: 64px;
+	line-height: 64px;
+	font-weight: bold;
+}
+
+.bg_white {
+	background-color: white;
+	color: black;
+}
+
+section {
+	margin: 40px 0 50px 0;
+	padding: 0 5%;
+}
+
+section h2 {
+	font-size: 32px;
+	font-weight: bold;
+}
+
+section p {
+	font-size: 14px;
+	font-weight: 900;
+}
+
+/* サインイン */
+
+.bg_darken{
+	z-index: 800;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0, 0, 0, 0.575);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.signin_box {
+	position: fixed;
+	top: 50%;
+	left: 30%;
+	z-index: 1000;
+	margin: auto;
+	width: 40%;
+	background-color: white;
+	border-radius: 12px;
+}
+
+.scroll {
+	top: 12%;
+	transition: 0.8s;
+}
+
+.signin_box h2 {
+	font-size: 19px;
+	font-weight: bold;
+	text-align: center;
+	padding: 16px 0;
+	border-bottom: 1px solid lightgray;
+}
+
+.signin_box dl {
+	padding: 20px;
+}
+
+.signin_box dd {
+	padding: 5px 0;
+}
+
+.signin_box dd input {
+	width: 100%;
+	font-size: 19px;
+	padding: 10px 3px;
+	border-radius: 8px;
+	border: 1px solid gray;
+}
+
+.signin_box dd button {
+	color: white;
+	background-color: rgb(215, 4, 102);
+	width: 100%;
+	font-size: 19px;
+	padding: 10px 3px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.signin_box dl.sns {
+	border-top: 1px solid lightgray;
+}
+
+.signin_box .sns dd img {
+	width: 24px;
+}
+
+.signin_box .sns dd button {
+	display: flex;
+	justify-content: center;
+	color: black;
+	background-color: white;
+	width: 100%;
+	padding: 13px 3px;
+	border: 1px solid lightgray;
+	border-radius: 8px;
+}
+
+
+/* 場所 */
+
+.prefecture  {
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 15px;
+}
+
+.prefecture .box {
+	padding: 10px 0;
+}
+
+.prefecture .info {
+	display: flex;
+	width: 22vw;
+}
+
+.prefecture .photo {
+	width: 64px;
+	height: 64px;
+}
+
+.prefecture .photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+.prefecture .access {
+	padding: 5px 15px;
+}
+
+.access .area {
+	font-weight: bold;
+}
+
+/* ロケーション */
+
+.location {
+	display: flex;
+}
+
+.location .box {
+	justify-content:space-around;
+}
+
+.location .photo img {
+	width: 95%;
+	height:95%;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+.location .text {
+	font-size: 18px;
+	font-weight: bold; 
+}
+
+/* キャンペーン */
+
+.campaign {
+	margin-top: 40px;
+	opacity: 0.9;
+	position: relative;
+	z-index: 100;
+}
+
+.campaign .text {
+	position: absolute;
+	top: 48px;
+	left: 48px;
+	background-color: rgba(255,255,255,0.3);
+	padding: 10px;
+}
+
+.campaign .text h3 {
+	font-size: 42px;
+	font-weight: bold;
+	color: black;
+}
+
+.campaign .text p {
+	font-size: 18px;
+	color: black;
+}
+
+/* 体験 */
+
+.bg_black {
+	background-color: black;
+	color: white;
+	padding: 40px 70px;
+}
+
+.experience {
+	margin-top: 10px;
+	display: flex;
+}
+
+.experience .box {
+	padding: 10px 0;
+	justify-content: space-between;
+}
+
+.experience .photo img {
+	width: 96%;
+	height: 96%;
+	border-radius: 8px;
+}
+
+.experience .text {
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 5px;
+}
+
+.experience p {
+	font-size: 14px;
+	font-weight: 100;
+}
+
+/* ホスト */
+.host {
+	display: flex;
+}
+
+.host .box {
+	padding: 10px 0;
+}
+
+.host .photo img {
+	width: 97%;
+	height: 97%;
+	border-radius: 8px;
+}
+
+.host .text {
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 5px;
+}
+
+/* フッター */
+
+footer {
+	border-top: 1px solid lightgray;
+	background-color: whitesmoke;
+	padding: 4vw 0;
+}
+
+footer .bg_gray {
+	width: 90%;
+	margin: auto;
+	font-size: 14px;
+}
+
+footer .nav_area {
+	display: flex;
+}
+
+footer .contents {
+	width: 100%;
+	justify-content: space-between;
+}
+
+footer .contents a {
+	color: rgba(0, 0, 0, 0.8);
+}
+
+footer .contents h2 {
+	font-weight: bold;
+}
+
+footer .contents li {
+	margin: 17px 0;
+}
+
+footer .introduction {
+	padding-top: 2vw;
+	color: rgba(0, 0, 0, 0.808);
+	border-top: 1px solid lightgray;
+}
+
+/* ジャンプボタン */
+
+.jump {
+	position: absolute;
+	position: fixed;
+	z-index: 500;
+	line-height: 48px;
+	height: 48px;
+	color: white;
+	cursor: pointer;
+	background-color: black;
+	padding: 0 10px;
+	right: 0;
+	bottom:0;
+	display: none;
+}
+
+/* お問い合わせ */
+
+.contact_box {
+	width: 70%;
+	margin: 66px auto;
+	border-radius: 16px;
+	border: 1px solid lightgray;
+}
+
+.contact_box form {
+	margin: 3%;
+}
+
+.contact_box p {
+	font-weight: normal;
+}
+
+.contact_box .required {
+	color: red;
+}
+
+.error {
+	color: red;
+}
+
+
+.contact_box h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	text-align: center;
+	padding: 1rem 0;
+	border-bottom: 1px solid lightgray;
+}
+
+.contact_box h3 {
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	background-color: whitesmoke;
+	padding: 9px;
+	margin: 10px 0;
+}
+
+.contact_box dl {
+	margin: 20px 0;
+}
+
+.contact_box dd {
+	padding: 6px 0;
+	font-size: 12px;
+}
+
+.contact_box input {
+	width: 100%;
+	font-size: 19px;
+	padding: 10px 2px;
+	border-radius: 8px;
+	border: 1px solid gray;
+}
+
+.contact_box textarea {
+	width: 100%;
+	height: 16vw;
+	font-size: 18px;
+	border-radius: 8px;
+	border: 1px solid gray;
+}
+
+.contact_box .send {
+	color: white;
+	background-color: rgb(215, 4, 102);
+	width: 100%;
+	font-size: 18px;
+	padding: 10px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+/* 確認画面 */
+
+.contact_box .confirm dt {
+	margin-top: 17px;
+	border-bottom: 1px solid lightgray;
+}
+
+.contact_box .confirm dd {
+	padding: 8px;
+	font-size: 19px;
+}
+
+.contact_box .confirm_btn {
+	display: flex;
+	justify-content: space-between;
+}
+
+.contact_box .send{
+	margin-right: 10px;
+}
+
+.contact_box .back {
+	width: 100%;
+	margin-left: 10px;
+  display: flex;
+  align-items: center;
+	justify-content: center;
+	background-color: white;
+	border: 2px solid rgb(1, 94, 1);
+	border-radius: 8px;
+	cursor: pointer;
+	color: rgb(1, 51, 1);
+	font-size: 18px;
+}
+
+/* 完了画面 */
+
+.contact_box .complete {
+	margin: 28px;
+}
+
+.contact_box .complete p {
+	margin-bottom: 10px;
+}
+
+.contact_box .complete a {
+	text-decoration: underline;
+}
