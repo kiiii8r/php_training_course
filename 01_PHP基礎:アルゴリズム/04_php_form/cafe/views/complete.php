@@ -6,6 +6,11 @@ if(!isset($_SESSION['access_flg']) && $_SESSION['access_flg'] !== 2387 || !isset
   header("Location:./contact.php");
 }
 
+// DB接続 保存
+require '../db/insert.php';
+
+insertContact($_SESSION);
+
 $_SESSION = array();
 session_destroy();
 ?>
