@@ -1,4 +1,5 @@
 <?php
+// サニタイズ
 function h($str) {
   return htmlspecialchars($str, ENT_QUOTES, "UTF-8");
 }
@@ -13,53 +14,13 @@ $kana    = null;
 $phone   = null;
 $email   = null;
 $inquiry = null;
+
+$validation = false;
   
-$name_alert = null;
-$kana_alert = null;
-$phone_alert = null;
-$email_alert = null;
-$inquiry_alert = null;
 
+require 'validation.php';
 
-// 送信データをチェック
-if ($_POST) {
-  
-  // 氏名
-  $name = h($_POST['name']);
-  if (empty($_POST['name'])) {
-    $name_alert = '氏名は必須項目です。';
-  } else if (!(mb_strlen($_POST['name']) <= 10)) {
-    $name_alert = '氏名は10字以内でご入力ください。';
-  }
-  
-  // カナ
-  $kana = h($_POST['kana']);
-  if (empty($_POST['kana'])) {
-    $kana_alert = 'フリガナは必須項目です。';
-  } else if (!(mb_strlen($_POST['kana']) <= 10)) {
-    $kana_alert = 'フリガナは10字以内でご入力ください。';
-  }
-
-  // 電話番号
-  $phone = h($_POST['phone']);
-  if (!preg_match('/^[0-9]{2,4}[0-9]{2,4}[0-9]{3,4}$/',$_POST['phone'])) {
-    $phone_alert = "電話番号は0-9の数字のみでご入力ください。";
-  }
-
-  // メール
-  $email = h($_POST['email']);
-  if (empty($_POST['email'])) {
-    $email_alert = 'Eメールは必須項目です。';
-  } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-    $email_alert= '正しいEメールアドレスを指定してください。';
-  }
-  
-  // お問い合わせ内容
-  $inquiry = h($_POST['inquiry']);
-  if (empty($_POST['inquiry'])) {
-    $inquiry_alert = 'お問い合わせ内容は必須項目です。';
-  }
-
+if( $validation === true ){
   if(!($name_alert || $kana_alert || $phone_alert || $email_alert ||  $inquiry_alert)) {
     header("Location:./confirm.php", true, 307);
   }
@@ -140,18 +101,60 @@ if ($_POST) {
         ?>
         </div>
         <dl class="inquiry">
-          <dd><textarea name="inquiry" id="inquiry" maxlength"1000 cols="100" rows="5"=><?= $inquiry ?></textarea>
+          <dd><textarea name="inquiry" id="inquiry" maxlength"1000 cols="100" rows="5"><?= $inquiry ?></textarea>
           </dd>
           <dd><button class="send" type="submit">送　信</button></dd>
         </dl>
 
       </form>
     </div>
+    <?php require '../db/db_connection.php';
+
+    // SELECT文を変数に格納
+    $sql = "SELECT * FROM contacts";
+    
+    // SQLステートメントを実行し、結果を変数に格納
+    $stmt = $pdo->query($sql);
+    
+    // foreach文で配列の中身を一行ずつ出力
+    $contacts = $stmt->fetchALL();
+    
+    ?>
+
+    <div class="cafe_data">
+      <table>
+        <tr>
+          <th>システムID</th>
+          <th>氏名</th>
+          <th>フリガナ</th>
+          <th>電話番号</th>
+          <th>メールアドレス</th>
+          <th>お問い合わせ内容</th>
+          <th>送信日時</th>
+          <th></th>
+          <th></th>
+        </tr>
+
+        <?php foreach($contacts as $contact): ?>
+        <tr>
+          <td><?= $contact['id'] ?></td>
+          <td><?= h($contact['name']) ?></td>
+          <td><?= h($contact['kana']) ?></td>
+          <td><?= h($contact['phone']) ?></td>
+          <td><?= h($contact['email']) ?></td>
+          <td><?= h($contact['inquiry']) ?></td>
+          <td><?= $contact['created_at'] ?></td>
+          <td><a href=edit.php?id=<?= $contact['id']; ?>>編集</a></td>
+          <td><a href=delete.php?id=<?= $contact['id']; ?> onclick="return confirm('本当に削除しますか？')">削除</a></td>
+        </tr>
+        <?php endforeach; ?>
+      </table>
+    </div>
   </section>
 
   <?php include 'shared/footer.html' ?>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  <script src=" https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
   <script type="text/javascript" src="../js/script.js"></script>
   <script type="text/javascript" src="../js/validation.js"></script>
