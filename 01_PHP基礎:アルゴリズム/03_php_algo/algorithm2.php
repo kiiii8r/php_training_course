@@ -21,19 +21,53 @@
 $yen = 10000;   // 購入金額
 $product = 150; // 商品金額
 
+// 入金金額の過不足
 function calc($yen, $product) {
-    // この関数内に処理を記述
+    $moneys = [10000, 5000, 1000, 500, 100, 50, 10, 5, 1];
+    $amount = $yen - $product;
+
+    if ($amount >= 0){
+        foreach($moneys as $money):
+            $amount = quantity($amount, $money);
+        endforeach;
+    } else {    
+        $shortage = $yen - $product;
+        echo $shortage . "円足りません。";
+    }
 }
+
+// お釣りの計算
+function quantity($amount, $money){
+    $sum = 0;
+    if($amount >= $money) {
+        for($i = 0 ; $amount >= $money; $i++){
+            $amount -= $money;
+            $sum++;
+        }
+    }
+    
+    if($money >= 1000){
+        echo $money . '円札x' . $sum . '枚、';
+        return $amount;
+    } else {
+        echo $money . '円玉x' . $sum . '枚、';
+        return $amount;
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="utf-8">
-<title>お釣り</title>
+  <meta charset="utf-8">
+  <title>お釣り</title>
 </head>
+
 <body>
-    <section>
-        <!-- ここに結果表示 -->
-    </section>
+  <section>
+    <?php calc($yen, $product) ?>
+  </section>
 </body>
+
 </html>

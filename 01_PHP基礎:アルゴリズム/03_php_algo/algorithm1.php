@@ -33,18 +33,38 @@
 // 以下省略
 
 function nabeatsu($i) {
-    // この関数内に処理を記述
+    if($i % 3 === 0 && $i % 5 ===0){
+        echo $i . 'アホわん' . '<br>';
+        return;
+    }
+    
+    if($i % 3 === 0 ){
+        echo $i . 'アホ' . '<br>';
+        return;
+    }
+    
+    if( $i % 5 ===0 ){
+        echo $i . 'わん' . '<br>';
+        return;
+    }
+
+    echo $i . '<br>';
 }
 ?>
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="utf-8">
-<title>世界のナベアツプログラム</title>
+  <meta charset="utf-8">
+  <title>世界のナベアツプログラム</title>
 </head>
+
 <body>
-    <section>
-        <!-- ここに結果表示 -->
-    </section>
+  <section>
+    <?php for($i=1; $i <= 100; $i++): ?>
+    <?php nabeatsu($i)?>
+    <?php endfor; ?>
+  </section>
 </body>
+
 </html>
