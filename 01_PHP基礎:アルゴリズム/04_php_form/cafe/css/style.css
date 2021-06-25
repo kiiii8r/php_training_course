@@ -653,3 +653,82 @@ footer .introduction {
 .contact_box .complete a {
 	text-decoration: underline;
 }
+
+/* データ参照 */
+
+.cafe_data table{
+  width: 100%;
+  border-collapse:separate;
+  border-spacing: 0; 
+	text-wrap: wrap;  
+}
+
+.cafe_data table th:first-child{
+  border-radius: 5px 0 0 0;
+}
+
+.cafe_data table th:last-child{
+  border-radius: 0 5px 0 0;
+  border-right: 1px solid #3c6690;
+}
+
+.cafe_data table th {
+  text-align: center;
+  color:white;
+  background: linear-gradient(#829ebc,#225588);
+  border-left: 1px solid #3c6690;
+  border-top: 1px solid #3c6690;
+  border-bottom: 1px solid #3c6690;
+  box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+	padding: 3px 2px;
+}
+
+.cafe_data table td{
+  text-align: center;
+  border-left: 1px solid #a8b7c5;
+  border-bottom: 1px solid #a8b7c5;
+  border-top: none;
+  box-shadow: 0px -3px 5px 1px #eee inset;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 300px;
+	padding: 5px 3px;
+}
+
+.cafe_data table td:last-child{
+  border-right: 1px solid #a8b7c5;
+}
+
+.cafe_data table tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+}
+
+.cafe_data table tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+}
+
+.cafe_data table td a{
+  color: rgba(20, 63, 119, 0.788);
+}
+
+/* edit & delete */
+
+.message_box {
+	width: 100%;
+	text-align: center;
+	
+}
+
+.message {
+	font-size: 25px;
+	font-weight: bold;
+	padding: 200px 0 50px 0; 
+}
+
+.contact_link{
+	margin: auto;
+	padding-bottom: 250px; 
+	font-size: 20px;
+	text-decoration: underline;
+}
