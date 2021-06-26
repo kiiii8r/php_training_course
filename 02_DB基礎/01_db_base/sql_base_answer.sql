@@ -99,3 +99,8 @@ USE cafe;
 -- SELECT *
 -- FROM players
 -- ORDER BY birth DESC;
+
+-- 問２２
+-- SELECT *
+-- FROM players
+-- ORDER BY height DESC;
