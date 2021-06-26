@@ -58,3 +58,8 @@ USE cafe;
 -- SELECT *
 -- FROM countries
 -- WHERE group_name NOT IN('A'); 
+
+-- 問１３
+-- SELECT *
+-- FROM players
+-- WHERE FLOOR(weight / POW(height / 100, 2)) = 20;
