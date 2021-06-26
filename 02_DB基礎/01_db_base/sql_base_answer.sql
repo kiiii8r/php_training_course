@@ -8,3 +8,8 @@ USE cafe;
 -- SELECT name, ranking, group_name
 -- FROM countries
 -- WHERE group_name='C';
+
+-- 問３
+-- SELECT name, ranking, group_name
+-- FROM countries
+-- WHERE group_name != 'C' ;
