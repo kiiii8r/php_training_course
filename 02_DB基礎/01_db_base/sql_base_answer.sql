@@ -85,3 +85,7 @@ USE cafe;
 -- 問１８
 -- SELECT CONCAT(name, "選手のポジションは'", position, "'です") AS POSITION
 -- FROM players;
+
+-- 問１９
+-- SELECT name, club, height + weight AS '体力指数'
+-- FROM players;
