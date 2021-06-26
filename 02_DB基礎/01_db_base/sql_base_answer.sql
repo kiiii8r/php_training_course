@@ -28,3 +28,8 @@ USE cafe;
 -- SELECT *
 -- FROM countries
 -- WHERE ranking BETWEEN 36 AND 56;
+
+-- 問７
+-- SELECT *
+-- FROM players
+-- WHERE position IN('GK', 'DF', 'MF');
