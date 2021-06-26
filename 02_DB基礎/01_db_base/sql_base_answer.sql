@@ -33,3 +33,8 @@ USE cafe;
 -- SELECT *
 -- FROM players
 -- WHERE position IN('GK', 'DF', 'MF');
+
+-- 問８
+-- SELECT *
+-- FROM goals
+-- WHERE player_id IS NULL;
