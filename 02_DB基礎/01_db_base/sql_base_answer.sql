@@ -89,3 +89,8 @@ USE cafe;
 -- 問１９
 -- SELECT name, club, height + weight AS '体力指数'
 -- FROM players;
+
+-- 問２０
+-- SELECT *
+-- FROM countries
+-- ORDER BY ranking ASC;
