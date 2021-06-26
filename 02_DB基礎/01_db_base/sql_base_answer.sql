@@ -108,3 +108,8 @@ USE cafe;
 -- 問２３
 -- SELECT id, uniform_num, SUBSTRING(position, 1, 1), name
 -- FROM players 
+
+-- 問２４
+-- SELECT name, LENGTH(name) 
+-- FROM countries
+-- ORDER BY LENGTH(name) DESC;
