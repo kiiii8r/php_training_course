@@ -18,3 +18,8 @@ USE cafe;
 -- SELECT *
 -- FROM players
 -- WHERE TIMESTAMPDIFF(YEAR, `birth`, CURDATE()) >= 40;
+
+-- 問５
+-- SELECT *
+-- FROM players
+-- WHERE height < 170;
