@@ -113,3 +113,7 @@ USE cafe;
 -- SELECT name, LENGTH(name) 
 -- FROM countries
 -- ORDER BY LENGTH(name) DESC;
+
+-- 問２５
+-- SELECT name , DATE_FORMAT(birth,'%Y年%m月%d日') AS birthday
+-- FROM players
