@@ -68,3 +68,8 @@ USE cafe;
 -- SELECT *
 -- FROM players
 -- WHERE height < 165 OR weight < 60;
+
+-- 問１５
+-- SELECT *
+-- FROM players
+-- WHERE position IN('FW', 'MF') AND height < 170;
