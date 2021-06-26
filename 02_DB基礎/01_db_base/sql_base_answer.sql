@@ -94,3 +94,8 @@ USE cafe;
 -- SELECT *
 -- FROM countries
 -- ORDER BY ranking ASC;
+
+-- 問２１
+-- SELECT *
+-- FROM players
+-- ORDER BY birth DESC;
