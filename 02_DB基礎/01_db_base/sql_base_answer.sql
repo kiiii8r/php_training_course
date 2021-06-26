@@ -53,3 +53,8 @@ USE cafe;
 -- SELECT *
 -- FROM players
 -- WHERE name LIKE '%ニョ%';
+
+-- 問１２
+-- SELECT *
+-- FROM countries
+-- WHERE group_name NOT IN('A'); 
