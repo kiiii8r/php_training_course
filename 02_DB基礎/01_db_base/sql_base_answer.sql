@@ -77,3 +77,7 @@ USE cafe;
 -- 問１６
 -- SELECT DISTINCT position
 -- FROM players
+
+-- 問１７
+-- SELECT name, club, height + weight AS 'height + weight'
+-- FROM players
