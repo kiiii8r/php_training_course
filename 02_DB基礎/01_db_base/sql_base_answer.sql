@@ -13,3 +13,8 @@ USE cafe;
 -- SELECT name, ranking, group_name
 -- FROM countries
 -- WHERE group_name != 'C' ;
+
+-- 問４
+-- SELECT *
+-- FROM players
+-- WHERE TIMESTAMPDIFF(YEAR, `birth`, CURDATE()) >= 40;
