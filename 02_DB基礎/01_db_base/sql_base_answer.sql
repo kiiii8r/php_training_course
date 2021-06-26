@@ -63,3 +63,8 @@ USE cafe;
 -- SELECT *
 -- FROM players
 -- WHERE FLOOR(weight / POW(height / 100, 2)) = 20;
+
+-- 問１４
+-- SELECT *
+-- FROM players
+-- WHERE height < 165 OR weight < 60;
