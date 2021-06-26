@@ -38,3 +38,8 @@ USE cafe;
 -- SELECT *
 -- FROM goals
 -- WHERE player_id IS NULL;
+
+-- 問９
+-- SELECT *
+-- FROM goals
+-- WHERE player_id IS NOT NULL;
