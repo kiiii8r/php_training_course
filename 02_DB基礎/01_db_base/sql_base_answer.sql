@@ -48,3 +48,8 @@ USE cafe;
 -- SELECT *
 -- FROM players
 -- WHERE name LIKE '%ニョ';
+
+-- 問１１
+-- SELECT *
+-- FROM players
+-- WHERE name LIKE '%ニョ%';
