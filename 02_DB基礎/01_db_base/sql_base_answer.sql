@@ -23,3 +23,8 @@ USE cafe;
 -- SELECT *
 -- FROM players
 -- WHERE height < 170;
+
+-- 問６
+-- SELECT *
+-- FROM countries
+-- WHERE ranking BETWEEN 36 AND 56;
