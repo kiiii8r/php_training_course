@@ -138,3 +138,7 @@ USE cafe;
 -- SELECT COUNT(id) AS '日本のゴール数'
 -- FROM goals
 -- WHERE player_id BETWEEN 714 AND 736;
+
+-- 問３０
+-- SELECT COUNT(player_id) AS 'オウンゴール以外のゴール数'
+-- FROM goals;
