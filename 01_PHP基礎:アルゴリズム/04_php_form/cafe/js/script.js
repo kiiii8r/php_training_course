@@ -57,15 +57,15 @@ $(function() {
     }
   });
 
-// ページ外からの指定位置へのスクロール
-var urlHash = location.hash;
-if (urlHash) {
-  $('body,html').stop().scrollTop(0);
-  setTimeout(function(){
-    var headerHight = 0;
-    var target = $(urlHash);
-    var position = target.offset().top - headerHight;
-    $('body,html').stop().animate({scrollTop:position}, 400);
-}, 100);
-}
+  // ページ外からの指定位置へのスクロール
+  var urlHash = location.hash;
+    if (urlHash) {
+      $('body,html').stop().scrollTop(0);
+      setTimeout(function(){
+        var headerHight = 0;
+        var target = $(urlHash);
+        var position = target.offset().top - headerHight;
+        $('body,html').stop().animate({scrollTop:position}, 400);
+    }, 100);
+  }
 });
