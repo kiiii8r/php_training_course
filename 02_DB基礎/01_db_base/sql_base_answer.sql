@@ -116,8 +116,8 @@ USE cafe;
 
 -- 問２５
 -- SELECT name , DATE_FORMAT(birth,'%Y年%m月%d日') AS birthday
--- FROM players
+-- FROM players;
 
 -- 問２６
 -- SELECT IFNULL(player_id, 9999) AS player_id, goal_time
--- FROM goals
+-- FROM goals;
