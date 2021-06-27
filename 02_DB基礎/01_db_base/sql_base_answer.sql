@@ -151,3 +151,8 @@ USE cafe;
 -- SELECT MIN(ranking) AS 'AグループのFIFAランク最上位'
 -- FROM countries
 -- WHERE group_name IN('A');
+
+-- 問３３
+-- SELECT SUM(ranking) AS 'CグループのFIFAランクの合計値'
+-- FROM countries
+-- WHERE group_name IN('C');
