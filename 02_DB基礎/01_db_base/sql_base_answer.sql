@@ -156,3 +156,9 @@ USE cafe;
 -- SELECT SUM(ranking) AS 'CグループのFIFAランクの合計値'
 -- FROM countries
 -- WHERE group_name IN('C');
+
+-- 問３４
+-- SELECT c.name AS name_c, p.name AS name_p, p.uniform_num
+-- FROM players AS p 
+-- JOIN countries AS c
+-- ON p.country_id = c.id
