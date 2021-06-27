@@ -146,3 +146,8 @@ USE cafe;
 -- 問３１
 -- SELECT MAX(height) AS '最大身長', MAX(weight) AS '最大体重'
 -- FROM players;
+
+-- 問３２
+-- SELECT MIN(ranking) AS 'AグループのFIFAランク最上位'
+-- FROM countries
+-- WHERE group_name IN('A');
