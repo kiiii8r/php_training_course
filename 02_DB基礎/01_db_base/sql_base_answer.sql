@@ -142,3 +142,7 @@ USE cafe;
 -- 問３０
 -- SELECT COUNT(player_id) AS 'オウンゴール以外のゴール数'
 -- FROM goals;
+
+-- 問３１
+-- SELECT MAX(height) AS '最大身長', MAX(weight) AS '最大体重'
+-- FROM players;
