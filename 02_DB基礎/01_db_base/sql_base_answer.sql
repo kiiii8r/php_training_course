@@ -210,3 +210,13 @@ USE cafe;
 -- FROM goals AS g
 -- JOIN players AS p
 -- ON p.id = g.player_id;
+
+-- 問４２
+-- SELECT mh.position, mh.max_height AS '最高身長', p.name, p.club
+-- FROM players AS p,
+--   (
+--     SELECT position, MAX(height) AS max_height 
+--     FROM players
+--     GROUP BY position
+--   ) AS mh
+-- WHERE ( p.position = mh.position AND p.height = mh.max_height );
