@@ -162,3 +162,11 @@ USE cafe;
 -- FROM players AS p 
 -- JOIN countries AS c
 -- ON p.country_id = c.id
+
+-- 問３５
+-- SELECT c.name AS name_c, p.name AS name_p, g.goal_time
+-- FROM players AS p 
+-- JOIN countries AS c
+-- ON p.country_id = c.id
+-- JOIN goals AS g
+-- ON p.id = g.player_id;
