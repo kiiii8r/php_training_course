@@ -198,3 +198,9 @@ USE cafe;
 -- ON p.my_country_id = mc.id 
 -- JOIN countries AS ec
 -- ON p.enemy_country_id = ec.id;
+
+-- 問４０
+-- SELECT g.id, g.goal_time, (
+--   SELECT p.name FROM players AS p WHERE g.player_id = p.id) AS player_name
+-- FROM goals AS g
+-- WHERE g.player_id IS NOT NULL;
