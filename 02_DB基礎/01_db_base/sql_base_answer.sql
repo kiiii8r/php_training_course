@@ -220,3 +220,12 @@ USE cafe;
 --     GROUP BY position
 --   ) AS mh
 -- WHERE ( p.position = mh.position AND p.height = mh.max_height );
+
+-- 問４３
+-- SELECT p.position, MAX(p.height) AS '最大身長', (
+--   SELECT pn.name
+--   FROM players AS pn
+--   WHERE pn.position = p.position AND pn.height = MAX(p.height) 
+-- ) AS name
+--   FROM players AS p
+--   GROUP BY p.position;
