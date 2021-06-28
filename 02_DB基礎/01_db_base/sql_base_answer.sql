@@ -190,3 +190,11 @@ USE cafe;
 -- ON g.player_id = p.id
 -- LEFT JOIN countries  AS c
 -- ON p.country_id = c.id;
+
+-- 問３９
+-- SELECT DATE_FORMAT(p.kickoff,'%Y-%m-%d %h:%i:%s') AS kickoff, mc.name AS my_country, ec.name AS enemy_country
+-- FROM pairings AS p
+-- JOIN countries AS mc
+-- ON p.my_country_id = mc.id 
+-- JOIN countries AS ec
+-- ON p.enemy_country_id = ec.id;
