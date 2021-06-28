@@ -251,3 +251,15 @@ USE cafe;
 -- FROM players
 -- WHERE birth BETWEEN '1981-01-01' AND '1981-12-31'
 -- GROUP BY DATE_FORMAT(birth, '%Y') ;
+
+-- 問４７
+SELECT 
+id, position, name, height, weight
+FROM players
+WHERE height > 195 
+UNION ALL
+SELECT 
+id, position, name, height, weight
+FROM players
+WHERE weight > 95
+ORDER BY id ASC;
