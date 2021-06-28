@@ -170,3 +170,9 @@ USE cafe;
 -- ON p.country_id = c.id
 -- JOIN goals AS g
 -- ON p.id = g.player_id;
+
+-- 問３６
+-- SELECT g.goal_time, p.uniform_num, p.position, p.name 
+-- FROM goals AS g
+-- LEFT JOIN players AS p
+-- ON g.player_id = p.id;
