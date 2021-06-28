@@ -234,3 +234,9 @@ USE cafe;
 -- SELECT uniform_num, position, name, height
 -- FROM players
 -- WHERE height <= (SELECT AVG(height) FROM players);
+
+-- 問４５
+-- SELECT group_name, MAX(ranking), MIN (ranking)
+-- FROM countries
+-- GROUP BY group_name
+-- HAVING (MAX(ranking) - MIN(ranking)) >= 50;
