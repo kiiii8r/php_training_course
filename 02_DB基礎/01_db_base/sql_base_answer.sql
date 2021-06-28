@@ -204,3 +204,9 @@ USE cafe;
 --   SELECT p.name FROM players AS p WHERE g.player_id = p.id) AS player_name
 -- FROM goals AS g
 -- WHERE g.player_id IS NOT NULL;
+
+-- 問４１
+-- SELECT g.id, g.goal_time, p.name
+-- FROM goals AS g
+-- JOIN players AS p
+-- ON p.id = g.player_id;
