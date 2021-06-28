@@ -229,3 +229,8 @@ USE cafe;
 -- ) AS name
 --   FROM players AS p
 --   GROUP BY p.position;
+
+-- 問４４ 
+-- SELECT uniform_num, position, name, height
+-- FROM players
+-- WHERE height <= (SELECT AVG(height) FROM players);
