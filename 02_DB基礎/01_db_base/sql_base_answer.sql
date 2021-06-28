@@ -162,3 +162,104 @@ USE cafe;
 -- FROM players AS p 
 -- JOIN countries AS c
 -- ON p.country_id = c.id
+
+-- 問３５
+-- SELECT c.name AS name_c, p.name AS name_p, g.goal_time
+-- FROM players AS p 
+-- JOIN countries AS c
+-- ON p.country_id = c.id
+-- JOIN goals AS g
+-- ON p.id = g.player_id;
+
+-- 問３６
+-- SELECT g.goal_time, p.uniform_num, p.position, p.name 
+-- FROM goals AS g
+-- LEFT JOIN players AS p
+-- ON g.player_id = p.id;
+
+-- 問３７
+-- SELECT g.goal_time, p.uniform_num, p.position, p.name 
+-- FROM players AS p
+-- RIGHT JOIN goals AS g
+-- ON g.player_id = p.id;
+
+-- 問３８
+-- SELECT c.name AS country_name, g.goal_time, p.position, p.name AS player_name
+-- FROM goals AS g
+-- LEFT JOIN players AS p
+-- ON g.player_id = p.id
+-- LEFT JOIN countries  AS c
+-- ON p.country_id = c.id;
+
+-- 問３９
+-- SELECT DATE_FORMAT(p.kickoff,'%Y-%m-%d %h:%i:%s') AS kickoff, mc.name AS my_country, ec.name AS enemy_country
+-- FROM pairings AS p
+-- JOIN countries AS mc
+-- ON p.my_country_id = mc.id 
+-- JOIN countries AS ec
+-- ON p.enemy_country_id = ec.id;
+
+-- 問４０
+-- SELECT g.id, g.goal_time, (
+--   SELECT p.name FROM players AS p WHERE g.player_id = p.id) AS player_name
+-- FROM goals AS g
+-- WHERE g.player_id IS NOT NULL;
+
+-- 問４１
+-- SELECT g.id, g.goal_time, p.name
+-- FROM goals AS g
+-- JOIN players AS p
+-- ON p.id = g.player_id;
+
+-- 問４２
+-- SELECT mh.position, mh.max_height AS '最高身長', p.name, p.club
+-- FROM players AS p,
+--   (
+--     SELECT position, MAX(height) AS max_height 
+--     FROM players
+--     GROUP BY position
+--   ) AS mh
+-- WHERE ( p.position = mh.position AND p.height = mh.max_height );
+
+-- 問４３
+-- SELECT p.position, MAX(p.height) AS '最大身長', (
+--   SELECT pn.name
+--   FROM players AS pn
+--   WHERE pn.position = p.position AND pn.height = MAX(p.height) 
+-- ) AS name
+--   FROM players AS p
+--   GROUP BY p.position;
+
+-- 問４４ 
+-- SELECT uniform_num, position, name, height
+-- FROM players
+-- WHERE height <= (SELECT AVG(height) FROM players);
+
+-- 問４５
+-- SELECT group_name, MAX(ranking), MIN (ranking)
+-- FROM countries
+-- GROUP BY group_name
+-- HAVING (MAX(ranking) - MIN(ranking)) >= 50;
+
+-- 問４６
+-- SELECT DATE_FORMAT(birth, '%Y') AS '誕生年', COUNT(id)
+-- FROM players
+-- WHERE birth BETWEEN '1980-01-01' AND '1980-12-31'
+-- GROUP BY DATE_FORMAT(birth, '%Y') 
+-- UNION
+-- SELECT DATE_FORMAT(birth, '%Y') AS '誕生年', COUNT(id)
+-- FROM players
+-- WHERE birth BETWEEN '1981-01-01' AND '1981-12-31'
+-- GROUP BY DATE_FORMAT(birth, '%Y') ;
+
+-- 問４７
+SELECT 
+id, position, name, height, weight
+FROM players
+WHERE height > 195 
+UNION ALL
+SELECT 
+id, position, name, height, weight
+FROM players
+WHERE weight > 95
+ORDER BY id ASC;
