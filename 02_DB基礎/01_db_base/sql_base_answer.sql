@@ -240,3 +240,14 @@ USE cafe;
 -- FROM countries
 -- GROUP BY group_name
 -- HAVING (MAX(ranking) - MIN(ranking)) >= 50;
+
+-- 問４６
+-- SELECT DATE_FORMAT(birth, '%Y') AS '誕生年', COUNT(id)
+-- FROM players
+-- WHERE birth BETWEEN '1980-01-01' AND '1980-12-31'
+-- GROUP BY DATE_FORMAT(birth, '%Y') 
+-- UNION
+-- SELECT DATE_FORMAT(birth, '%Y') AS '誕生年', COUNT(id)
+-- FROM players
+-- WHERE birth BETWEEN '1981-01-01' AND '1981-12-31'
+-- GROUP BY DATE_FORMAT(birth, '%Y') ;
