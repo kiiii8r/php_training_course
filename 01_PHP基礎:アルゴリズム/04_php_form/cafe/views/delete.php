@@ -1,6 +1,7 @@
 <?php
-  // 不正アクセス対策
   session_start();
+
+  // 不正アクセス対策
   if(!isset($_SESSION['access_flg']) && $_SESSION['access_flg'] !== 7485 || !isset($_GET["id"])){
     header("Location:./contact.php");
   }
