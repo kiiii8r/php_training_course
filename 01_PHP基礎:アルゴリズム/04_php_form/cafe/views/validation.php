@@ -27,8 +27,8 @@ if ($_POST) {
 
   // 電話番号
   $phone = h($_POST['phone']);
-  if (!preg_match('/^[0-9]{2,4}[0-9]{2,4}[0-9]{3,4}$/',$_POST['phone'])) {
-    $phone_alert = "電話番号は0-9の数字のみでご入力ください。";
+  if (!preg_match('/^[0-9]{2,4}[0-9]{2,4}[0-9]{3,4}$/',$_POST['phone']) && (!empty($_POST['phone']))) {
+    $phone_alert = "正しい電話番号を入力してください。";
   }
 
   // メール
