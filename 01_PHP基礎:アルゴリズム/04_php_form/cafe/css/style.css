@@ -252,6 +252,7 @@ section p {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	display: none;
 }
 
 .signin_box {
@@ -263,6 +264,7 @@ section p {
 	width: 40%;
 	background-color: white;
 	border-radius: 12px;
+	display: none;
 }
 
 .scroll {
