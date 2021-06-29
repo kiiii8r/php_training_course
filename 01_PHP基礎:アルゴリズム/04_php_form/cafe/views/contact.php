@@ -1,28 +1,30 @@
 <?php
-// サニタイズ
-function h($str) {
-  return htmlspecialchars($str, ENT_QUOTES, "UTF-8");
-}
-
 session_start();
 
 // 不正アクセス対策
 $_SESSION['access_flg'] = 7485;
 
-$name    = null;
-$kana    = null;
-$phone   = null;
-$email   = null;
-$inquiry = null;
+// サニタイズ
+function h($str) {
+  return htmlspecialchars($str, ENT_QUOTES, "UTF-8");
+}
 
 $validation = false;
-  
+$back = false;
 
 require 'validation.php';
 
-if( $validation === true ){
-  if(!($name_alert || $kana_alert || $phone_alert || $email_alert ||  $inquiry_alert)) {
-    header("Location:./confirm.php", true, 307);
+if(!($name_alert || $kana_alert || $phone_alert || $email_alert ||  $inquiry_alert)) {
+  if ($_POST) {
+    if($_POST['back']){
+    $back = $_POST['back'];
+    }
+  }
+
+  if( $validation === true && $back === false){
+    $_SESSION['form'] = $_POST;
+    header('Location: confirm.php');
+    exit();
   }
 }
 ?>
@@ -59,7 +61,8 @@ if( $validation === true ){
               }  
             ?>
           </div>
-          <dd><input type="text" name="name" id="name" placeholder="山田太郎" value="<?= $name ?>"></dd>
+          <dd><input type="text" name="name" id="name" placeholder="山田太郎"
+              value="<?php if($_POST){echo $_POST['name'];} ?>"></dd>
 
           <dt><label for="kana">フリガナ</label><span class="required">*</span></dt>
           <div class="error">
@@ -69,7 +72,8 @@ if( $validation === true ){
             }  
           ?>
           </div>
-          <dd><input type=" text" name="kana" id="kana" placeholder="ヤマダタロウ" value="<?= $kana ?>"></dd>
+          <dd><input type=" text" name="kana" id="kana" placeholder="ヤマダタロウ"
+              value="<?php if($_POST){echo $_POST['kana'];} ?>"></dd>
 
           <dt><label for="phone">電話番号</label></dt>
           <div class="error">
@@ -79,7 +83,8 @@ if( $validation === true ){
             }  
           ?>
           </div>
-          <dd><input type="text" name="phone" id="phone" placeholder="09012345678" value="<?= $phone ?>"></dd>
+          <dd><input type="text" name="phone" id="phone" placeholder="09012345678"
+              value="<?php if($_POST){echo $_POST['phone'];} ?>"></dd>
 
           <dt><label for="email">メールアドレス</label><span class="required">*</span></dt>
           <div class="error">
@@ -89,10 +94,11 @@ if( $validation === true ){
             }  
           ?>
           </div>
-          <dd><input type="text" name="email" id="email" placeholder="test@test.co.jp" value="<?= $email ?>"></dd>
+          <dd><input type="text" name="email" id="email" placeholder="test@test.co.jp"
+              value="<?php if($_POST){echo $_POST['email'];} ?>"></dd>
         </dl>
 
-        <h3><label for="body">お問い合わせ内容をご記入ください<span class="required">*</span></label></h3>
+        <h3><label for=" body">お問い合わせ内容をご記入ください<span class="required">*</span></label></h3>
         <div class="error">
           <?php 
           if($inquiry_alert) {
@@ -101,7 +107,9 @@ if( $validation === true ){
         ?>
         </div>
         <dl class="inquiry">
-          <dd><textarea name="inquiry" id="inquiry" maxlength"1000 cols="100" rows="5"><?= $inquiry ?></textarea>
+          <dd>
+            <textarea name="inquiry" id="inquiry" maxlength"1000 cols="100"
+              rows="5"><?php if($_POST){echo $_POST['inquiry'];} ?></textarea>
           </dd>
           <dd><button class="send" type="submit">送　信</button></dd>
         </dl>

@@ -252,6 +252,7 @@ section p {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	display: none;
 }
 
 .signin_box {
@@ -263,6 +264,7 @@ section p {
 	width: 40%;
 	background-color: white;
 	border-radius: 12px;
+	display: none;
 }
 
 .scroll {
@@ -607,37 +609,51 @@ footer .introduction {
 
 /* 確認画面 */
 
+.contact_box .confirm_box {
+	margin: 3%;
+}
+
 .contact_box .confirm dt {
 	margin-top: 17px;
-	border-bottom: 1px solid lightgray;
 }
 
 .contact_box .confirm dd {
 	padding: 8px;
 	font-size: 19px;
+
 }
 
 .contact_box .confirm_btn {
 	display: flex;
-	justify-content: space-between;
+	justify-content:space-between;
+	margin-left: -11px;
 }
 
-.contact_box .send{
-	margin-right: 10px;
+.confirm_send .send{
+	width: 28.8vw;
+	height: 50px;
+}
+
+.contact_box .confirm_back {
+	padding-right: 14px;
 }
 
 .contact_box .back {
-	width: 100%;
-	margin-left: 10px;
-  display: flex;
-  align-items: center;
-	justify-content: center;
+	width: 28.8vw;
+	height: 50px;
 	background-color: white;
 	border: 2px solid rgb(1, 94, 1);
 	border-radius: 8px;
 	cursor: pointer;
 	color: rgb(1, 51, 1);
 	font-size: 18px;
+}
+
+
+.conf_inq{
+	overflow: scroll;
+	max-height: 300px;
+	margin: 10px 0;
 }
 
 /* 完了画面 */

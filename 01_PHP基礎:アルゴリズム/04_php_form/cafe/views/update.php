@@ -1,8 +1,8 @@
 <?php
+  session_start();
 
   // 不正アクセス対策
-  session_start();
-  if(!isset($_SESSION['access_flg']) && $_SESSION['access_flg'] !== 2387 || !isset($_POST['name']) || !isset($_POST['kana']) || !isset($_POST['email']) || !isset($_POST['inquiry']) ){
+  if(!isset($_SESSION['access_flg']) && $_SESSION['access_flg'] !== 3645 || !isset($_POST['name']) || !isset($_POST['kana']) || !isset($_POST['email']) || !isset($_POST['inquiry']) ){
     header("Location:./contact.php");
   }
 
@@ -21,15 +21,15 @@
     // DB情報取得 SQLインジェクション対策済み
     $stmt = $pdo->prepare('UPDATE contacts SET name = :name, kana = :kana, phone = :phone, email = :email, inquiry = :inquiry WHERE id = :id');
 
-    $stmt->bindValue(':name',$_POST['name'],PDO::PARAM_STR);
-    $stmt->bindValue(':kana',$_POST['kana'],PDO::PARAM_STR);
-    $stmt->bindValue(':phone',$_POST['phone'],PDO::PARAM_STR);
-    $stmt->bindValue(':email',$_POST['email'],PDO::PARAM_STR);
-    $stmt->bindValue(':inquiry',$_POST['inquiry'],PDO::PARAM_STR);
+    $stmt->bindValue(':name',h($_POST['name']),PDO::PARAM_STR);
+    $stmt->bindValue(':kana',h($_POST['kana']),PDO::PARAM_STR);
+    $stmt->bindValue(':phone',h($_POST['phone']),PDO::PARAM_STR);
+    $stmt->bindValue(':email',h($_POST['email']),PDO::PARAM_STR);
+    $stmt->bindValue(':inquiry', nl2br(h($_POST['inquiry'])),PDO::PARAM_STR);
     $stmt->bindValue(':id',$_POST['id'],PDO::PARAM_INT);
 
     $stmt->execute(); 
-    
+       
     // SQLトランザクションコミット
     $pdo->commit();
     $message = "情報を更新しました。";

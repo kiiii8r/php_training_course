@@ -1,12 +1,12 @@
 <?php
+session_start();
 
 // 不正アクセス対策
-session_start();
 if(!isset($_SESSION['access_flg']) && $_SESSION['access_flg'] !== 7485 || !isset($_GET["id"])){
   header("Location:./contact.php");
 }
 
-$_SESSION['access_flg'] = 2387;
+$_SESSION['access_flg'] = 3645;
 
 // サニタイズ
 function h($str) {

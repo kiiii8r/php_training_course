@@ -1,8 +1,6 @@
 $(function() {
 
   // サインイン画面
-  $(".bg_darken").hide();
-  $("#signin_box").hide();
 
   $("#signin").click(function() {
     $(".bg_darken").show();
