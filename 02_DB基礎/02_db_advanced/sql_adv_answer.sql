@@ -71,3 +71,14 @@ USE cafe;
 -- SELECT COUNT(g.goal_time)
 -- FROM goals g
 -- WHERE g.player_id IS NULL;
+
+-- 問１１
+-- SELECT c.group_name, COUNT(g.id)
+-- FROM pairings p
+-- JOIN countries c
+-- ON c.id = p.my_country_id
+-- JOIN goals g
+-- ON g.pairing_id = p.id
+-- WHERE p.kickoff
+-- BETWEEN '2014-06-13 00:00:00' AND '2014-6-27 23:59:59'
+-- GROUP BY c.group_name;
