@@ -53,3 +53,11 @@ USE cafe;
 -- ON p.id = g.player_id
 -- GROUP BY g.player_id
 -- ORDER BY ゴール数 DESC;
+
+-- 問８
+-- SELECT p.position ポジション, COUNT(g.player_id) ゴール数
+-- FROM players p
+-- LEFT JOIN goals g
+-- ON g.player_id = p.id
+-- GROUP BY p.position
+-- ORDER BY ゴール数 DESC;
