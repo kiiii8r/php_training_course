@@ -66,3 +66,8 @@ USE cafe;
 -- SELECT DATE_FORMAT(birth, '%Y-%m-%d') birth,  TIMESTAMPDIFF(YEAR, birth, '20140613') age, name, position
 -- FROM players
 -- ORDER BY age DESC;
+
+-- 問１０
+-- SELECT COUNT(g.goal_time)
+-- FROM goals g
+-- WHERE g.player_id IS NULL;
