@@ -27,3 +27,15 @@ USE cafe;
 -- FROM players AS p
 -- GROUP BY p.country_id
 -- ORDER BY AVG(p.height) DESC;
+
+-- 問５
+-- SELECT p.kickoff, (
+--   SELECT cm.name
+--   FROM countries AS cm
+--   WHERE p.my_country_id = cm.id) AS '国名１',
+--   (
+--   SELECT ce.name
+--   FROM countries AS ce
+--   WHERE p.enemy_country_id = ce.id) AS '国名２'
+-- FROM pairings AS p
+-- ORDER BY p.kickoff ASC;
