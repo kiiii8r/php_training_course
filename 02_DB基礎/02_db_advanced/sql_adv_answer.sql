@@ -44,3 +44,12 @@ USE cafe;
 -- SELECT p.name 名前, p.position ポジション, p.club 所属クラブ, (SELECT COUNT(g.id) FROM goals g WHERE g.player_id = p.id) ゴール数
 -- FROM players p
 -- ORDER BY ゴール数 DESC;
+
+-- 問７
+-- SELECT p.name 名前, p.position ポジション, p.club 所属クラブ,
+-- COUNT(g.player_id) ゴール数
+-- FROM players p
+-- JOIN goals g
+-- ON p.id = g.player_id
+-- GROUP BY g.player_id
+-- ORDER BY ゴール数 DESC;
