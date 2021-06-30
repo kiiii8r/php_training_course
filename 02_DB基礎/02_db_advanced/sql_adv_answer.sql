@@ -82,3 +82,10 @@ USE cafe;
 -- WHERE p.kickoff
 -- BETWEEN '2014-06-13 00:00:00' AND '2014-6-27 23:59:59'
 -- GROUP BY c.group_name;
+
+-- 問１２
+-- SELECT g.goal_time
+-- FROM pairings p
+-- JOIN goals g 
+-- ON p.id = g.pairing_id
+-- WHERE p.id = 103;
