@@ -61,3 +61,8 @@ USE cafe;
 -- ON g.player_id = p.id
 -- GROUP BY p.position
 -- ORDER BY ゴール数 DESC;
+
+-- 問９
+-- SELECT DATE_FORMAT(birth, '%Y-%m-%d') birth,  TIMESTAMPDIFF(YEAR, birth, '20140613') age, name, position
+-- FROM players
+-- ORDER BY age DESC;
