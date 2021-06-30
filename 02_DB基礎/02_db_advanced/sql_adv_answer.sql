@@ -89,3 +89,13 @@ USE cafe;
 -- JOIN goals g 
 -- ON p.id = g.pairing_id
 -- WHERE p.id = 103;
+
+-- 問１３
+-- SELECT c.name, COUNT(g.goal_time)
+-- FROM countries c
+-- JOIN pairings p
+-- ON p.my_country_id = c.id
+-- JOIN goals g
+-- ON p.id = g.pairing_id
+-- WHERE p.id = 39 OR p.id =103
+-- GROUP BY c.name;
