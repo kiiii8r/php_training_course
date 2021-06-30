@@ -17,3 +17,13 @@ USE cafe;
 -- ON c.id = p.country_id
 -- GROUP BY c.name
 -- ORDER BY AVG(p.height) DESC;
+
+-- 問４
+-- SELECT (
+--   SELECT c.name
+--   FROM countries AS c 
+--   WHERE c.id = p.country_id) AS '国名', 
+--   AVG(p.height) AS '平均身長'
+-- FROM players AS p
+-- GROUP BY p.country_id
+-- ORDER BY AVG(p.height) DESC;
