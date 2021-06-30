@@ -39,3 +39,8 @@ USE cafe;
 --   WHERE p.enemy_country_id = ce.id) AS '国名２'
 -- FROM pairings AS p
 -- ORDER BY p.kickoff ASC;
+
+-- 問６
+-- SELECT p.name 名前, p.position ポジション, p.club 所属クラブ, (SELECT COUNT(g.id) FROM goals g WHERE g.player_id = p.id) ゴール数
+-- FROM players p
+-- ORDER BY ゴール数 DESC;
