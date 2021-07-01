@@ -112,3 +112,17 @@ USE cafe;
 -- WHERE cm.group_name = 'C' AND ce.group_name = 'C'
 -- GROUP BY p.kickoff, cm.name, ce.name, cm.ranking, ce.ranking 
 -- ORDER BY p.kickoff, cm.ranking;
+
+-- 問１５
+-- SELECT DATE_FORMAT(p.kickoff, '%Y-%m-%d %h:%i:%s') kickoff, cm.name my_country, ce.name enemy_country, cm.ranking my_ranking, ce.ranking enemy_ranking, (
+--   SELECT COUNT(g.id)
+--   FROM goals g 
+--   WHERE g.pairing_id = p.id
+--   ) my_goals
+-- FROM pairings p
+-- LEFT JOIN countries cm
+-- ON cm.id = p.my_country_id
+-- LEFT JOIN countries ce
+-- ON ce.id = p.enemy_country_id
+-- WHERE cm.group_name = 'C' AND ce.group_name = 'C'
+-- ORDER BY p.kickoff, my_goals DESC
