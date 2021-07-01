@@ -99,3 +99,16 @@ USE cafe;
 -- ON p.id = g.pairing_id
 -- WHERE p.id = 39 OR p.id =103
 -- GROUP BY c.name;
+
+-- 問１４
+-- SELECT DATE_FORMAT(p.kickoff, '%Y-%m-%d %h:%i:%s') kickoff, cm.name my_country, ce.name enemy_country, cm.ranking my_ranking, ce.ranking enemy_ranking, COUNT(g.id) my_goals
+-- FROM pairings p
+-- LEFT JOIN countries cm
+-- ON cm.id = p.my_country_id
+-- LEFT JOIN countries ce
+-- ON ce.id = p.enemy_country_id
+-- LEFT JOIN goals g
+-- ON g.pairing_id = p.id
+-- WHERE cm.group_name = 'C' AND ce.group_name = 'C'
+-- GROUP BY p.kickoff, cm.name, ce.name, cm.ranking, ce.ranking 
+-- ORDER BY p.kickoff, cm.ranking;
