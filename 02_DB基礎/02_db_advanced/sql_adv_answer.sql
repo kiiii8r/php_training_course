@@ -185,3 +185,8 @@ USE cafe;
 -- SELECT FLOOR(TIMESTAMPDIFF(YEAR, birth, '2014-06-13') / 10) *10 age, COUNT(id) player_count
 -- FROM players 
 -- GROUP BY age;
+
+-- 問２１
+-- SELECT FLOOR(TIMESTAMPDIFF(YEAR, birth, '2014-06-13') / 5) * 5 age, COUNT(id) player_count
+-- FROM players 
+-- GROUP BY age;
