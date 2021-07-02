@@ -175,3 +175,8 @@ USE cafe;
 -- SELECT DATE_FORMAT(kickoff, '%Y-%m-%d %H:%i:%s') kickoff, DATE_FORMAT(DATE_SUB(kickoff, INTERVAL 12 HOUR), '%Y-%m-%d %H:%i:%s') kickoff_jp
 -- FROM pairings p
 -- WHERE p.my_country_id = 1 AND p.enemy_country_id = 4;
+
+-- 問１９
+-- SELECT TIMESTAMPDIFF(YEAR, birth, '2014-06-13') AS age, COUNT(id) player_count
+-- FROM players 
+-- GROUP BY age;
