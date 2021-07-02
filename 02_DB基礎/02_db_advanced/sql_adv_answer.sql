@@ -148,3 +148,25 @@ USE cafe;
 -- WHERE cm.group_name = 'C' AND ce.group_name = 'C'
 -- ORDER BY p.kickoff, my_goals DESC;
 
+-- 問１７
+-- SELECT DATE_FORMAT(p.kickoff, '%Y-%m-%d %h:%i:%s') kickoff, cm.name my_country, ce.name enemy_country, cm.ranking my_ranking, ce.ranking enemy_ranking, (
+--   SELECT COUNT(gm.id)
+--   FROM goals gm 
+--   WHERE gm.pairing_id = p.id
+--   ) my_goals,
+--   (
+--   SELECT COUNT(ge.id)
+--   FROM goals ge
+--   LEFT JOIN pairings pe
+--   ON ge.pairing_id = pe.id
+--   WHERE pe.enemy_country_id = p.my_country_id AND pe.my_country_id = p.enemy_country_id
+--   ) enemy_goals,
+--   (SELECT my_goals - enemy_goals
+--   ) goal_deff
+-- FROM pairings p
+-- LEFT JOIN countries cm
+-- ON cm.id = p.my_country_id
+-- LEFT JOIN countries ce
+-- ON ce.id = p.enemy_country_id
+-- WHERE cm.group_name = 'C' AND ce.group_name = 'C'
+-- ORDER BY p.kickoff, my_goals DESC;
