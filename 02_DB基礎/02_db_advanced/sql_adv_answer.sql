@@ -170,3 +170,8 @@ USE cafe;
 -- ON ce.id = p.enemy_country_id
 -- WHERE cm.group_name = 'C' AND ce.group_name = 'C'
 -- ORDER BY p.kickoff, my_goals DESC;
+
+-- 問１８
+-- SELECT DATE_FORMAT(kickoff, '%Y-%m-%d %H:%i:%s') kickoff, DATE_FORMAT(DATE_SUB(kickoff, INTERVAL 12 HOUR), '%Y-%m-%d %H:%i:%s') kickoff_jp
+-- FROM pairings p
+-- WHERE p.my_country_id = 1 AND p.enemy_country_id = 4;
