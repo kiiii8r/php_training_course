@@ -1,0 +1,79 @@
+table, th, td {
+  border-collapse: collapse;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  line-height: 1.5;
+  padding: 5px 10px;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background: #ebebeb;
+ }
+
+
+/* 選手一覧 */
+
+.top {
+  width: 100%;
+  text-align: center;
+  line-height: 60px;
+  height: 60px;
+}
+
+.paging_box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.paging {
+  display: flex;
+  width: 80%;
+  padding-top: 30px;
+  justify-content:space-evenly;
+}
+
+/* 選手詳細 */
+
+.points{
+  padding: 50px;
+}
+
+/* 選手編集 */
+
+.error {
+	color: red;
+}
+
+input,select {
+	width: 38%;
+	font-size: 17px;
+	padding: 5px 2px;
+  margin: 2px;
+	border-radius: 8px;
+	border: 1px solid gray;
+}
+
+.edit {
+	color: white;
+	background-color: rgba(2, 43, 177, 0.877);
+	width: 40%;
+	font-size: 18px;
+	padding: 10px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.edit:hover {
+	color: white;
+	background-color: rgba(2, 43, 177, 0.719);
+}
